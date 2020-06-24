@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            android:name="viewModel"
+            android:type="com.example.whatisyourstrippername.StripperViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity" android:background="#11131A">
+
+
+        <TextView
+                android:text="@string/title1text"
+                android:layout_width="294dp"
+                android:layout_height="98dp"
+                android:id="@+id/title1" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="44dp"
+                android:textColor="#FF9800" android:textSize="36sp" android:fontFamily="@font/bungee"
+                app:layout_constraintHorizontal_bias="0.495" android:textAlignment="center"/>
+        <TextView
+                android:text="@string/title2text"
+                android:layout_width="401dp"
+                android:layout_height="86dp" android:id="@+id/title2"
+                android:textColor="#FF3A20" android:textSize="40sp"
+                android:fontFamily="@font/bungee_shade"
+                android:layout_marginTop="44dp" app:layout_constraintTop_toTopOf="@+id/title1"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+                android:text="@string/name1titletext"
+                android:layout_width="170dp"
+                android:layout_height="48dp" android:id="@+id/name1title"
+                app:layout_constraintTop_toBottomOf="@+id/title2" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" android:textColor="#FF5722" android:textAlignment="center"
+                android:textSize="36sp" android:fontFamily="@font/passero_one"/>
+        <TextView
+                android:text="@string/name2"
+                android:layout_width="210dp"
+                android:layout_height="54dp" android:id="@+id/name2title"
+                app:layout_constraintTop_toBottomOf="@+id/first_name_options" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" android:layout_marginTop="28dp" android:fontFamily="@font/passero_one"
+                android:textSize="36sp" android:textColor="#FF5722" android:textAlignment="center"/>
+        <HorizontalScrollView
+                android:layout_width="400dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/name1title" app:layout_constraintStart_toStartOf="parent"
+                android:background="#B68F3B"
+                android:id="@+id/first_name_options" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginStart="8dp">
+            <TextView
+                    android:text="@{viewModel.firstname}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" android:id="@+id/textView4"
+                    app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" android:textSize="35sp"
+                    android:scrollbarSize="4dp" android:textColor="#FFFFFF" android:fontFamily="@font/princess_sofia"/>
+        </HorizontalScrollView>
+        <TextView
+                android:layout_width="10dp"
+                android:layout_height="16dp" android:id="@+id/textView6" android:background="#11131A"
+                app:layout_constraintTop_toTopOf="@+id/first_name_options"
+                app:layout_constraintStart_toStartOf="@+id/first_name_options"
+                app:layout_constraintEnd_toEndOf="@+id/first_name_options" android:layout_marginEnd="8dp"
+                app:layout_constraintHorizontal_bias="0.507"/>
+        <HorizontalScrollView
+                android:layout_width="401dp"
+                android:layout_height="64dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/name2title" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                android:background="#B68F3B" android:id="@+id/second_name_heading">
+            <TextView
+                    android:text="@{viewModel.secondname}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" tools:layout_editor_absoluteY="404dp"
+                    tools:layout_editor_absoluteX="28dp" android:id="@+id/second_name_text" android:textColor="#FFFFFF"
+                    android:fontFamily="@font/princess_sofia" android:textSize="35sp"/>
+        </HorizontalScrollView>
+        <TextView
+                android:layout_width="9dp"
+                android:layout_height="15dp"
+                android:id="@+id/textView3" android:background="#11131A"
+                app:layout_constraintTop_toBottomOf="@+id/name2title"
+                app:layout_constraintEnd_toEndOf="@+id/second_name_heading"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
+                app:layout_constraintHorizontal_bias="0.519"/>
+        <TextView
+                android:text="@string/last_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lastname" android:textColor="#FF5722"
+                android:fontFamily="@font/passero_one" android:textSize="36sp" android:layout_marginTop="28dp"
+                app:layout_constraintTop_toBottomOf="@+id/second_name_heading" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.497"/>
+        <HorizontalScrollView
+                android:layout_width="401dp"
+                android:layout_height="67dp"
+                android:background="#B68F3B" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/lastname" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                android:id="@+id/horizontalScrollView">
+
+            <TextView
+                    android:text="@{viewModel.lastname}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" android:id="@+id/third_name_text" android:textColor="#FFFF"
+                    android:fontFamily="@font/princess_sofia" android:textSize="35sp"/>
+        </HorizontalScrollView>
+        <TextView
+                android:text="@string/last_name_text_lolol"
+                android:layout_width="10dp"
+                android:layout_height="14dp"
+                android:id="@+id/textView8" android:background="#11131A"
+                app:layout_constraintTop_toTopOf="@+id/horizontalScrollView"
+                app:layout_constraintEnd_toEndOf="@+id/horizontalScrollView"
+                app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
